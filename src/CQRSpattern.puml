@@ -1,0 +1,27 @@
+@startuml
+title CQRS pattern in Scores application
+actor User
+
+node "UI"
+
+[User]-->UI
+[User]<--UI
+node "Command Model" {
+[UI]-->[Command]
+}
+
+node "Query Model" {
+[UI]-->[query]
+
+}
+
+
+database "Queries"
+database "Commands"
+
+Command-->Commands : Writes
+Command<--Commands
+query-->Queries :Reads
+query<--Queries
+Commands->Queries: Syncs
+@enduml

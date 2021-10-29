@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+actor User as user
+note left of user : Sofka U coach.
+
+
+package Student_scores{
+usecase "Add course" as UseCase1
+usecase "Create Program" as UseCase2
+usecase "Extract score" as UseCase3
+
+}
+
+
+user --> UseCase1
+user --> UseCase2
+user --> UseCase3
+@enduml
